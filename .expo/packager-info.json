@@ -3,7 +3,8 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://he-378.jolebowski77.ipssicom.exp.direct",
+  "packagerNgrokUrl": "https://packager.he-378.jolebowski77.ipssicom.exp.direct",
+  "ngrokPid": 18889,
+  "webpackServerPort": null
 }

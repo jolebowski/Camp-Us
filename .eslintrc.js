@@ -1,0 +1,61 @@
+module.exports = {
+    extends: [
+        'airbnb',
+        'plugin:jest/recommended',
+        'plugin:jsx-a11y/recommended',
+        'plugin:security/recommended',
+        'plugin:react/recommended',
+        'prettier',
+        'prettier/react'
+    ],
+    parser: 'babel-eslint',
+    rules: {
+        'no-console': 0,
+        'no-useless-return': 0,
+        'global-require': 0,
+        'func-names': 0,
+        'no-shadow': 0,
+        'no-use-before-define': 0,
+        'no-param-reassign': 0,
+        'new-cap': 0,
+        'no-underscore-dangle': 0,
+        'no-prototype-builtins': 0,
+        'no-nested-ternary': 0,
+        'no-plusplus': 0,
+        'no-extra-boolean-cast': 0,
+        'spaced-comment': 0,
+        'no-restricted-properties': 0,
+        'no-restricted-syntax': 0,
+        'no-confusing-arrow': 0,
+        'no-case-declarations': 0,
+        'linebreak-style': 0,
+        'jsx-a11y/anchor-has-content': 0,
+        'jsx-a11y/no-static-element-interactions': 0,
+        'jsx-a11y/click-events-have-key-events': 'warn',
+        'jsx-a11y/mouse-events-have-key-events': 'warn',
+        'jsx-a11y/no-onchange': 'warn',
+        'react/jsx-key': 'warn',
+        'react/display-name': 'warn',
+        'react/no-unescaped-entities': 0,
+        'react/no-string-refs': 0,
+        'react/no-multi-comp': 0,
+        'react/sort-comp': 0,
+        'react/no-danger': 0,
+        'react/jsx-no-target-blank': 0,
+        'react/no-array-index-key': 0,
+        'react/jsx-filename-extension': 0,
+        'react/require-default-props': 0,
+        'react/forbid-prop-types': 0,
+        'import/prefer-default-export': 0,
+        'import/no-named-as-default': 0,
+        'import/no-extraneous-dependencies': [
+            'error',
+            {
+                devDependencies: true,
+                optionalDependencies: false
+            }
+        ],
+
+    },
+    plugins: ['import', 'jsx-a11y', 'react']
+};

@@ -56,6 +56,6 @@ const styles = StyleSheet.create({
     FortgetPassword: {
         flexGrow: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     }
 });
