@@ -5,17 +5,16 @@ import Cours from '../pages/Cours.js';
 
 import Bar from './Bar.js';
 import Login from '../pages/Login.js';
-
+import BonPlans from '../pages/BonsPlans.js';
 
 
 const MyNavigator = createDrawerNavigator({
   Cours : Cours,
-  Login : Login
+  BonPlans : BonPlans
  }
   ,{
     drawerPosition : 'left',
-    order : ['Cours','Login'],
-    initialRouteName : 'Login',
+    initialRouteName : 'BonPlans',
     contentComponent : Bar,
     backgroundColor: '#E5E5E5',
     drawerOpenRoute: 'DrawerOpen',
