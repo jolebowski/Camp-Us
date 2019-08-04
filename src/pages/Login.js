@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, ImageBackground } from 'react-native';
+import { StyleSheet, ImageBackground } from 'react-native';
 import Logo from '../components/Logo';
 import Form from '../components/Form'
 

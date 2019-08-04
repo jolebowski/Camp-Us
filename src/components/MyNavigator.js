@@ -1,6 +1,8 @@
 
 import { createDrawerNavigator, createAppContainer } from 'react-navigation';
+
 import Cours from '../pages/Cours.js';
+
 import Bar from './Bar.js';
 import Login from '../pages/Login.js';
 
@@ -8,10 +10,11 @@ import Login from '../pages/Login.js';
 
 const MyNavigator = createDrawerNavigator({
   Cours : Cours,
-  Login : Login,
+  Login : Login
  }
   ,{
     drawerPosition : 'left',
+    order : ['Cours','Login'],
     initialRouteName : 'Login',
     contentComponent : Bar,
     backgroundColor: '#E5E5E5',
