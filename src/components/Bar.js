@@ -16,7 +16,7 @@ import { StyleSheet, ImageBackground,View,Image } from 'react-native';
          <View style = { styles.profileColumn}>
             <View style = {styles.profileRow}>
             <Left>
-                <Thumbnail  large style={{ width: 97, height: 95, marginTop:30}} source={{uri: 'https://cdn.pixabay.com/photo/2014/04/03/10/32/businessman-310819_960_720.png'}} />
+                <Thumbnail  large style={{ width: 97, height: 95, marginTop:30,border:1,borderColor:'white'}} source={{uri: 'https://cdn.pixabay.com/photo/2014/04/03/10/32/businessman-310819_960_720.png'}} />
                 </Left>
                 <Right>
                 <Image
@@ -74,7 +74,8 @@ flexDirection:'column',
           flex:1,
           flexDirection:'column',
           marginTop:30,
-          alignItems:'flex-start'
+          alignItems:'flex-start',
+          
       },
     Header : {
 flex:1,
