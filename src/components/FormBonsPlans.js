@@ -1,13 +1,13 @@
 //This is an example code to understand Modal//
-import { Container, Content, Header, Body, Icon,Footer,Fab,List,Right } from 'native-base';
+import { Container, Content, Header, Body, Icon,Tab,Footer,Fab,List,Right,Segment } from 'native-base';
 
 import React from 'react';
 //import react in our code.
 
-import { Modal, Button, View, Text, StyleSheet,TouchableOpacity,TextInput,ImageBackground } from 'react-native';
+import { Modal, View, Text,Button, StyleSheet,TouchableOpacity,TextInput,ImageBackground } from 'react-native';
 //import all the components we are going to use.
 
-export default class Formbp extends React.Component {
+export default class Addbonplan extends React.Component {
  
  state = {
         isVisible: false, //state of modal default false
@@ -24,7 +24,7 @@ export default class Formbp extends React.Component {
             <Text style={{color:'#8CC7B1'}}>Ajouter un bon plan</Text>
           </Body>
               <Right>
-              <Button transparent
+              <Button 
               color = '#8CC7B1'
               title="X"
               onPress={() => {
@@ -37,18 +37,27 @@ export default class Formbp extends React.Component {
           {/*Animation can be slide, slide, none*/}
           <ImageBackground
                 style={styles.imgBackground} source={require('../../assets/fond2.png')}>
+           
           <View >
+
+
             <Text style={styles.text}>Formulaire à remplir</Text>
             <TextInput style={styles.inputBox}
-                    placeholder="Titre" placeholderTextColor="#2B3B4B" />
-                <TextInput style={styles.inputBox} placeholder="Description"
-                      multiline={true}
-    numberOfLines={4}
-    onChangeText={(text) => this.setState({text})}
-    value={this.state.text} placeholderTextColor="#2B3B4B"/>
+                placeholder="Titre" 
+                placeholderTextColor="#2B3B4B" />
+                <TextInput style={styles.inputBox}
+                placeholder="Adresse" 
+                placeholderTextColor="#2B3B4B" />
+            <TextInput style={styles.textarea} 
+                placeholder="Description"
+                multiline={true}
+                numberOfLines={4}
+                onChangeText={(text) => this.setState({text})}
+                value={this.state.text} 
+                placeholderTextColor="#2B3B4B"/>
           </View>
           </ImageBackground>
-
+          
         </Modal>
 
         {/*Button will change state to true and view will re-render*/}
@@ -97,6 +106,17 @@ inputBox: {
     fontSize: 16,
     color: '#000000',
     marginVertical: 10
+},
+textarea: {
+  width: 300,
+  backgroundColor: '#C4C4C4',
+  width: 288,
+  height: 200,
+  borderRadius: 23,
+  paddingHorizontal: 16,
+  fontSize: 16,
+  color: '#000000',
+  marginVertical: 10
 },
   addButton: {
     backgroundColor: '#ff5722',

@@ -2,7 +2,7 @@ import React  from 'react'
 import { Container, Content, Header, Body, Icon,Footer,Fab, Text,List,ListItem, Right } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { StyleSheet, ImageBackground,View,Image,FlatList,Dimensions,TouchableOpacity,Modal } from 'react-native';
-import Formbp from '../components/FormBonsPlans.js';
+import Addbonplan from '../pages/ModalBonPlan.js';
 
 import Menu from '../components/Menu';
 
@@ -57,7 +57,6 @@ export default class BonsPlans extends React.Component{
                 </Body>
             </Header>
             <Content>
-
                 <FlatList
                 data={data}
                 style={styles.container}
@@ -67,7 +66,7 @@ export default class BonsPlans extends React.Component{
             </Content>
             <Footer style={{backgroundColor:'#2B3B4B'}}>
                <Right>
-               <Formbp />
+               <Addbonplan />
                </Right>
 
             </Footer>
@@ -89,6 +88,6 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         flex:1,
         margin:1,
-        height: Dimensions.get('window').width/2
+        height: Dimensions.get('window').width/4
     }
 });
