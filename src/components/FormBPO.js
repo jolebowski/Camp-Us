@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Container, Content, Header, Body, Icon,Tab,Footer,Fab,List,Right,Segment } from 'native-base';
-import { Modal, View, Text,Button, StyleSheet,TouchableOpacity,TextInput,ImageBackground } from 'react-native';
+import { Container, Left, Body, Picker,Tab,DatePicker,Radio,Fab,ListItem,Right,Segment } from 'native-base';
+import { Modal, View, Text,Button, StyleSheet,TextInput,ImageBackground } from 'react-native';
 
 
 export default class Formbpoccasionnel extends React.Component {
@@ -11,8 +11,21 @@ export default class Formbpoccasionnel extends React.Component {
      
         this.state = {
            text: null,
+            selected: "key1",
+            chosenDate: new Date(),
         }
+    this.setDate = this.setDate.bind(this);
      }
+
+     setDate(newDate) {
+      this.setState({ chosenDate: newDate });
+    }
+
+    onValueChange(value) {
+      this.setState({
+        selected: value
+      })}
+
     render(){
         return(
             <Container>
@@ -23,18 +36,67 @@ export default class Formbpoccasionnel extends React.Component {
            
 
             <Text style={styles.text}>Formulaire à remplir</Text>
-            <TextInput style={styles.inputBox}
+           
+                <TextInput style={styles.inputBox}
                 placeholder="Titre" 
                 placeholderTextColor="#2B3B4B"
-                textAlignVertical={"top"}
- />
+                textAlignVertical={"top"}/>
+<Text> Type de bons plans</Text>
+<Picker
+              note
+              mode="dropdown"
+              style={{ width: 200 }}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            >
+              <Picker.Item label="Restaurant" value="key0" />
+              <Picker.Item label="Application" value="key1" />
+              <Picker.Item label="Abonnement" value="key1" />
+              <Picker.Item label="Autre" value="key2" />
+            </Picker>
+
+<View>
+<Text>Date de début :{this.state.chosenDate.toString().substr(4, 12)}</Text>
+
+  <DatePicker
+            defaultDate={new Date(2019, 4, 4)}
+            minimumDate={new Date(2018, 1, 1)}
+            maximumDate={new Date(2018, 12, 31)}
+            locale={"en"}
+            timeZoneOffsetInMinutes={undefined}
+            modalTransparent={false}
+            animationType={"fade"}
+            androidMode={"default"}
+            placeHolderText="Select date"
+            textStyle={{ color: "green" }}
+            placeHolderTextStyle={{ color: "#d3d3d3" }}
+            onDateChange={this.setDate}
+            disabled={false}
+            />
+            <Text>Date de fin : {this.state.chosenDate.toString().substr(4, 12)}</Text>
+  <DatePicker
+            defaultDate={new Date(2018, 4, 4)}
+            minimumDate={new Date(2018, 1, 1)}
+            maximumDate={new Date(2018, 12, 31)}
+            locale={"en"}
+            timeZoneOffsetInMinutes={undefined}
+            modalTransparent={false}
+            animationType={"fade"}
+            androidMode={"default"}
+            placeHolderText="Select date"
+            textStyle={{ color: "green" }}
+            placeHolderTextStyle={{ color: "#d3d3d3" }}
+            onDateChange={this.setDate}
+            disabled={false}
+            />
+  </View>
                 <TextInput style={styles.inputBox}
                 placeholder="Adresse" 
                 placeholderTextColor="#2B3B4B"
                 textAlignVertical={"top"}
  />
             <TextInput style={styles.textarea} 
-                placeholder="Exemple : 'En tant qu'élève à l'IPSSI, vous bénéficiez d'une réduction de 10% sous présentation de la carte étudiante...'" 
+                placeholder="Description" 
                 multiline={true}
                 numberOfLines={4}
                 onChangeText={(text) => this.setState({text})}

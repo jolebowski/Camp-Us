@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Content, Header, Body, Icon,Tab,Footer,Fab,List,Right,Segment } from 'native-base';
+import { Container, Content, Header, Body, Picker,Tab,Footer,Fab,List,Right,Segment } from 'native-base';
 
 import { Modal, View, Text,Button, StyleSheet,TouchableOpacity,TextInput,ImageBackground } from 'react-native';
 
@@ -13,8 +13,14 @@ export default class Formbppermanant extends React.Component {
      
         this.state = {
            text: null,
+           selected: "key1",
+
         }
      }
+     onValueChange(value) {
+        this.setState({
+          selected: value
+        })}
     render(){
         return(
             <Container >
@@ -28,6 +34,19 @@ export default class Formbppermanant extends React.Component {
                 textAlignVertical={"top"}
 
                 />
+
+<Text> Type de bons plans</Text>
+<Picker
+              note
+              mode="dropdown"
+              style={{ width: 200 }}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            >
+              <Picker.Item label="Restaurant" value="key0" />
+              <Picker.Item label="Application" value="key1" />
+              <Picker.Item label="Autre" value="key2" />
+            </Picker>
                 <TextInput style={styles.inputBox}
                 placeholder="Adresse" 
                 placeholderTextColor="#2B3B4B" 
@@ -44,7 +63,9 @@ export default class Formbppermanant extends React.Component {
                     textAlignVertical={"top"}
                     autoCorrect
                     keyboardType={"twitter"}
+                    
                 />
+                
           </ImageBackground>
 
 </Container>
