@@ -5,6 +5,7 @@ import { StyleSheet, ImageBackground,View,Image,FlatList,Dimensions,TouchableOpa
 import Addbonplan from '../pages/ModalBonPlan.js';
 
 import Menu from '../components/Menu';
+import DetailBP from '../components/DetailBP';
 
 const data = [
     {
@@ -37,7 +38,7 @@ export default class BonsPlans extends React.Component{
 
       renderItem=({item,index}) => {
           return(
-            <TouchableOpacity style={styles.item}>
+            <TouchableOpacity style={styles.item} onPress={() => this.props.navigation.navigate('DetailBP')}>
 <Text style={{color:'#2B3B4B',fontsize:16}}> {item.key}</Text>
 </TouchableOpacity>
 
@@ -50,11 +51,17 @@ export default class BonsPlans extends React.Component{
         <Container >
             <Header style={{backgroundColor : '#2B3B4B'}} transparent = {true}>
                 <Menu navigation={this.props.navigation}/>
+               
                 <Body>
-                    <Text style={{color:'#8CC7B1'}}>
+                    <Text style={{color:'white'}}>
                     Les Bons plans
                     </Text>
                 </Body>
+                <Right>
+                    <View style={{marginBottom:20}}>
+            <Addbonplan />
+            </View>
+                </Right>
             </Header>
             <Content>
                 <FlatList
@@ -65,10 +72,7 @@ export default class BonsPlans extends React.Component{
                 />
             </Content>
             <Footer style={{backgroundColor:'#2B3B4B'}}>
-               <Right>
-               <Addbonplan />
-               </Right>
-
+          
             </Footer>
         </Container>
 

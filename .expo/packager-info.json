@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
+  "expoServerPort": 19000,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://4h-u7k.anonymous.ipssicom.exp.direct",
+  "packagerNgrokUrl": "https://packager.4h-u7k.anonymous.ipssicom.exp.direct",
+  "ngrokPid": 7722,
   "webpackServerPort": null
 }

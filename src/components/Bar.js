@@ -25,9 +25,9 @@ import { StyleSheet, ImageBackground,View,Image } from 'react-native';
                     </Right>
             </View>
             <View style={styles.profileText}>
-                <Text style = {{ color: 'white'}}>Nom Prénom</Text>
+                <Text style = {{ color: 'white'}}>Hamra Abdelkader</Text>
             <Text style = {{ color: 'white'}}>Adresse.Email@ecole-ipssi.net</Text>
-            <Text style = {{ color: 'white'}}>Statut</Text>
+            <Text style = {{ color: 'white'}}>Elève</Text>
         </View>
          </View>
 

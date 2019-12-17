@@ -1,10 +1,10 @@
  //This is an example code to understand Modal//
-import { Container, Content, Header, Body, Icon,Tab,Tabs,Footer,Fab,List,Right,Segment } from 'native-base';
+import { Container, Content,Button, Header, Body, Icon,Tab,Tabs,Footer,Fab,List,Right,Segment } from 'native-base';
 
 import React from 'react';
 //import react in our code.
 
-import { Modal, View, Text,Button, StyleSheet,TouchableOpacity,TextInput,ImageBackground } from 'react-native';
+import { Modal, View, Text, StyleSheet,TouchableOpacity,TextInput,ImageBackground } from 'react-native';
 //import all the components we are going to use.
 
 import Formbppermanant from '../components/FormBPP.js';
@@ -49,13 +49,12 @@ export default class Addbonplan extends React.Component {
         </Modal>
 
         {/*Button will change state to true and view will re-render*/}
-<View style={{marginBottom:20}}>
-        <TouchableOpacity  style={{backgroundColor: '#2B3B4B'}}
+        <Button style={{backgroundColor: '#2B3B4B'}}
         onPress={() => this.setState({ isVisible: !this.state.isVisible })}>
-                <Text style={{fontSize: 50, color: 'white'}} >+</Text>
+               {/* <Text style={{fontSize: 15, color: 'white'}} >Ajouter un bon plan</Text>*/} 
+                <Icon name='add' />
 
-                </TouchableOpacity>
-                </View>
+                </Button>
       </Container>
     );
   }

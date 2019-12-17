@@ -61,13 +61,16 @@ export default class Addbonplan extends React.Component {
         </Modal>
 
         {/*Button will change state to true and view will re-render*/}
-<View style={{marginBottom:20}}>
-        <TouchableOpacity  style={{backgroundColor: '#2B3B4B'}}
-        onPress={() => this.setState({ isVisible: !this.state.isVisible })}>
-                <Text style={{fontSize: 50, color: 'white'}} >+</Text>
+       {/* <View style={{marginBottom:20}}>*/}
 
+        <TouchableOpacity  style={[styles.fab]} onPress={() => this.setState({ isVisible: !this.state.isVisible })}>
+
+        
+                <Text style={[styles.fabIcon]} >Ajouter un bon plan</Text>
                 </TouchableOpacity>
-                </View>
+
+              {/*   </View>*/}
+
       </Container>
     );
   }
@@ -136,5 +139,21 @@ textarea: {
       height: 1,
       width: 0
     }
-  }
+  },
+  fab: { 
+    position: 'absolute', 
+    width: 56, 
+    height: 56, 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    right: 20, 
+    bottom: 20, 
+    backgroundColor: '#03A9F4', 
+    borderRadius: 30, 
+    elevation: 8 
+    }, 
+    fabIcon: { 
+      fontSize: 40, 
+      color: 'white' 
+    }
 });
