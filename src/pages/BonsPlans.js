@@ -1,11 +1,9 @@
 import React  from 'react'
-import { Container, Content, Header, Body, Icon,Footer,Fab, Text,List,ListItem, Right } from 'native-base';
+import { Container, Content, Header, Body, Icon,Footer,Fab , Text,Button,List,ListItem, Right } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { StyleSheet, ImageBackground,View,Image,FlatList,Dimensions,TouchableOpacity,Modal } from 'react-native';
-import Addbonplan from '../pages/ModalBonPlan.js';
+import { StyleSheet,ImageBackground,View,Image,FlatList,Dimensions,TouchableOpacity,Modal } from 'react-native';
 
 import Menu from '../components/Menu';
-import DetailBP from '../components/DetailBP';
 
 const data = [
     {
@@ -27,7 +25,6 @@ const data = [
 export default class BonsPlans extends React.Component{
 
    
-
     static navigationOptions = ({ navigation }) => ({
 
         title: "Bons Plans",
@@ -39,7 +36,7 @@ export default class BonsPlans extends React.Component{
       renderItem=({item,index}) => {
           return(
             <TouchableOpacity style={styles.item} onPress={() => this.props.navigation.navigate('DetailBP')}>
-<Text style={{color:'#2B3B4B',fontsize:16}}> {item.key}</Text>
+<Text style={{color:'#2B3B4B',fontsize:16}}>{item.key}</Text>
 </TouchableOpacity>
 
           );
@@ -49,19 +46,16 @@ export default class BonsPlans extends React.Component{
 
         return (
         <Container >
-            <Header style={{backgroundColor : '#2B3B4B'}} transparent = {true}>
+            <Header 
+            style={{backgroundColor : '#2B3B4B'}} 
+            transparent = {true}>
                 <Menu navigation={this.props.navigation}/>
-               
                 <Body>
-                    <Text style={{color:'white'}}>
+                    <Text 
+                    style={{color:'white'}}>
                     Les Bons plans
                     </Text>
                 </Body>
-                <Right>
-                    <View style={{marginBottom:20}}>
-            <Addbonplan />
-            </View>
-                </Right>
             </Header>
             <Content>
                 <FlatList
@@ -71,8 +65,17 @@ export default class BonsPlans extends React.Component{
                 numColumns= {2}
                 />
             </Content>
-            <Footer style={{backgroundColor:'#2B3B4B'}}>
-          
+            <Footer 
+            style={{backgroundColor:'#2B3B4B'}}>
+                <Right>
+                    <View>
+                        <Button 
+                        transparent
+                        onPress={() => this.props.navigation.navigate('AddBP')}>
+                            <Icon name="add" />
+                        </Button>
+                    </View>
+                </Right>
             </Footer>
         </Container>
 

@@ -22,7 +22,8 @@ export default class Addbonplan extends React.Component {
         <Modal
           animationType={'slide'}
           transparent={false}
-          visible={this.state.isVisible}>
+          visible={this.state.isVisible}
+         >
            <Header style={{backgroundColor:'#2B3B4B'}}>
           <Body>
             <Text style={{color:'#8CC7B1'}}>Ajouter un bon plan</Text>
