@@ -71,7 +71,7 @@ export default class BonsPlans extends React.Component{
                     <View>
                         <Button 
                         transparent
-                        onPress={() => this.props.navigation.navigate('AddBP')}>
+                        onPress={() => this.props.navigation.navigate('AddBP1')}>
                             <Icon name="add" />
                         </Button>
                     </View>

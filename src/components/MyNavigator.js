@@ -1,3 +1,6 @@
+{/* MyNavigator component */}
+{/* To navigate between screen/stack */}
+
 import React from 'react';
 
 import {
@@ -14,8 +17,8 @@ import Bar from './Bar.js';
 import Login from '../pages/Login.js';
 import BonPlans from '../pages/BonsPlans.js';
 import DetailBP from '../components/DetailBP';
-import AddBP from '../components/AddBP';
-
+import AddBP1 from '../components/AddBPpart1';
+import AddBP2 from '../components/AddBPpart2';
 
 
 const AuthStackNavigation = createStackNavigator({
@@ -29,7 +32,9 @@ const AuthStackNavigation = createStackNavigator({
 const BPStack = createStackNavigator({ // For header options
   ListBP: BonPlans,
   DetailBP: DetailBP,
-  AddBP: AddBP,
+  AddBP1: AddBP1,
+  AddBP2: AddBP2
+
 }, {
   initialRouteName: 'ListBP',
     headerMode: 'none',

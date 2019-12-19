@@ -28,32 +28,42 @@ export default class Formbppermanant extends React.Component {
                 style={styles.imgBackground} source={require('../../assets/fond2.png')}>
 
             <Text style={styles.text}>Formulaire à remplir</Text>
-            <TextInput style={styles.inputBox}
+            <TextInput 
+            
+            style={styles.inputBox}
                 placeholder="Titre" 
                 placeholderTextColor="#2B3B4B" 
                 textAlignVertical={"top"}
 
                 />
 
-<Text> Type de bons plans</Text>
+
+<Text> Types de bon plan</Text>
 <Picker
+              
               note
               mode="dropdown"
               style={{ width: 200 }}
               selectedValue={this.state.selected}
               onValueChange={this.onValueChange.bind(this)}
+              placeholder="Selectionner un type de bon plan ?"
+              placeholderStyle={{ color: "#bfc6ea" }}
+
             >
               <Picker.Item label="Restaurant" value="key0" />
               <Picker.Item label="Application" value="key1" />
               <Picker.Item label="Autre" value="key2" />
             </Picker>
-                <TextInput style={styles.inputBox}
+                <TextInput 
+                
+                style={styles.inputBox}
                 placeholder="Adresse" 
                 placeholderTextColor="#2B3B4B" 
                 textAlignVertical={"top"}
 
                 />
-            <TextInput style={styles.textarea} 
+            <TextInput 
+            style={styles.textarea} 
                 placeholder="Description"
                 multiline={true}
                 numberOfLines={4}
@@ -100,13 +110,15 @@ const styles = StyleSheet.create({
   inputBox: {
       width: 300,
       backgroundColor: '#C4C4C4',
-      width: 288,
+      //width: 288,
       height: 46,
       borderRadius: 23,
       paddingHorizontal: 16,
       fontSize: 16,
       color: '#000000',
-      marginVertical: 10
+      marginVertical: 10,
+      alignItems: 'stretch',
+
   },
   textarea: {
     width: 300,
