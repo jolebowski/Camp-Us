@@ -16,9 +16,9 @@ import Cours from '../pages/Cours.js';
 import Bar from './Bar.js';
 import Login from '../pages/Login.js';
 import BonPlans from '../pages/BonsPlans.js';
-import DetailBP from '../components/DetailBP';
-import AddBP1 from '../components/AddBPpart1';
-import AddBP2 from '../components/AddBPpart2';
+//import DetailBP from '../components/DetailBP';
+//import AddBP1 from '../components/AddBPpart1';
+//import AddBP2 from '../components/AddBPpart2';
 
 
 const AuthStackNavigation = createStackNavigator({
@@ -31,9 +31,9 @@ const AuthStackNavigation = createStackNavigator({
 
 const BPStack = createStackNavigator({ // For header options
   ListBP: BonPlans,
-  DetailBP: DetailBP,
-  AddBP1: AddBP1,
-  AddBP2: AddBP2
+//DetailBP: DetailBP,
+//AddBP1: AddBP1,
+//AddBP2: AddBP2
 
 }, {
   initialRouteName: 'ListBP',

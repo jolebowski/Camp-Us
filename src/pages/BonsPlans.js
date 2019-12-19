@@ -1,7 +1,7 @@
 import React  from 'react'
-import { Container, Content, Header, Body, Icon,Footer,Fab , Text,Button,List,ListItem, Right } from 'native-base';
+import { Container, Content, Header, Body, Icon,Footer, Text,Button, Right } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { StyleSheet,ImageBackground,View,Image,FlatList,Dimensions,TouchableOpacity,Modal } from 'react-native';
+import { StyleSheet,View,FlatList,Dimensions,TouchableOpacity } from 'react-native';
 
 import Menu from '../components/Menu';
 
@@ -21,7 +21,6 @@ const data = [
 ];
 
 
-
 export default class BonsPlans extends React.Component{
 
    
@@ -36,9 +35,8 @@ export default class BonsPlans extends React.Component{
       renderItem=({item,index}) => {
           return(
             <TouchableOpacity style={styles.item} onPress={() => this.props.navigation.navigate('DetailBP')}>
-<Text style={{color:'#2B3B4B',fontsize:16}}>{item.key}</Text>
-</TouchableOpacity>
-
+                <Text style={{color:'#2B3B4B',fontsize:16}}>{item.key}</Text>
+            </TouchableOpacity>
           );
       };
      
@@ -71,7 +69,7 @@ export default class BonsPlans extends React.Component{
                     <View>
                         <Button 
                         transparent
-                        onPress={() => this.props.navigation.navigate('AddBP1')}>
+                        onPress={() => this.props.navigation.navigate('')}>
                             <Icon name="add" />
                         </Button>
                     </View>

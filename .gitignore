@@ -1,3 +1,11 @@
 node_modules
 node_modules/.cache/@babel/register/.babel.7.4.5.development.json
 node_modules/.cache/@babel/register/.babel.7.4.5.development.json
+.expo/settings.json
+.expo/packager-info.json
+.expo/settings.json
+.expo/packager-info.json
+*.json
+src/components/.DS_Store
+src/pages/.DS_Store
+.expo/settings.json
