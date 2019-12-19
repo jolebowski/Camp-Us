@@ -28,7 +28,7 @@ export default class BonsPlans extends React.Component{
 
         title: "Bons Plans",
 
-        drawerIcon: () => <Ionicons name="md-star" size={24} />
+        drawerIcon: () => <Icon name="add" size={24} />
 
       });
 
