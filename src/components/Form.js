@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-nativ
 export default class Form extends Component {
     state = {
         email: '',
-        pass: ''
+        password: ''
     }
     updateValue = (text, field) => {
         this.setState({
@@ -12,11 +12,35 @@ export default class Form extends Component {
         })
     }
     submit = () => {
-        const { email, pass } = this.state
+        const { email, password } = this.state
         let collection = {};
         collection.email = email
-        collection.pass = pass
-        console.warn(collection)
+        collection.password = password
+        if (email == '' && password == '') {
+            this.setState({ Error: 'Veuilllez remplir tous les champs' })
+        } else if (email == '') {
+            this.setState({ Error: 'Veuillez entrer votre adresse mail' })
+        } else if (password == '') {
+            this.setState({ Error: 'Veuillez entrer votre mot de passe' })
+        } else {
+            fetch('https://whispering-harbor-79661.herokuapp.com/api/login', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: this.state.email,
+                    password: this.state.password
+                })
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    console.log(data)
+                });
+        }
     }
     render() {
 
@@ -33,7 +57,7 @@ export default class Form extends Component {
                     placeholder="Mot de passe"
                     placeholderTextColor="#2B3B4B"
                     secureTextEntry={true}
-                    onChangeText={(pass) => this.updateValue(pass, 'pass')}
+                    onChangeText={(text) => this.updateValue(text, 'password')}
                 />
                 <View>
                     <Text
@@ -42,6 +66,9 @@ export default class Form extends Component {
                         Mot de passe oublié ?
                     </Text>
                 </View>
+                <Text style={{ color: 'red', textAlign: 'center' }}>
+                    {this.state.Error}
+                </Text>
                 <TouchableOpacity
                     onPress={() => this.submit()}
                     style={styles.button}>
