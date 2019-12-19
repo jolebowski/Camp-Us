@@ -11,48 +11,56 @@
  
  import Formbpoccasionnel from './FormBPO.js';
 
- 
+
  export default class AddBP extends React.Component {
   constructor(props){
     super(props);
- 
-   
-    
- }
- 
+    this.state = {
+      dataBP: this.props.navigation.state.params.dataBP
 
-    urlImageBP(dataBP){
-      if(this.props.dataBP.type=="Restaurant"){
+    } 
+
+ }
+
+    urlImageBP(params){
+      if(params.type=="Restaurant"){
         this.setState({
           dataBP:{
             urlImage:"https://cdn.pixabay.com/photo/2016/01/19/15/07/cocktails-1149171_960_720.jpg"
           }
         })
       }
-      if(this.props.dataBP.type=="Application"){
+      if(params.type=="Application"){
         this.setState({
           dataBP:{
             urlImage:"https://cdn.pixabay.com/photo/2014/08/05/10/27/iphone-410311_960_720.jpg"
           }
         })
       }
-      if(this.props.dataBP.type=="Evenement"){
+      if(params.type=="Evenement"){
         this.setState({
           dataBP:{
             urlImage:"https://cdn.pixabay.com/photo/2017/11/24/10/43/admission-2974645_960_720.jpg "
           }
         })
       }
-      if(this.props.dataBP.type=="Autre"){
+      if(params.type=="Autre"){
         this.setState({
           dataBP:{
             urlImage:"https://cdn.pixabay.com/photo/2016/11/29/13/42/light-bulbs-1869945_960_720.jpg"
           }
         })
       }
+      return(params.urlImage)
     }
 
+    componentWillMount = () => {
+     // urlImageBP(this.state.dataBP);
+    console.debug("this.state.dataBP");
+     }
+
      render(){
+
          return(
             <Container 
             style={styles.container}> 
@@ -75,42 +83,18 @@
                 
                 
                 
-                <Image source={{uri: this.props.dataBP.urlImage}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
+                <Image source={{uri: "https://cdn.pixabay.com/photo/2016/11/29/13/42/light-bulbs-1869945_960_720.jpg"}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
                 <Card style={styles.mb}>
             <CardItem  >
               <Body>
                 <Text>Quel est le type de votre bon plan ?</Text>
-                <Picker
-              note
-              mode="dropdown"
-              style={{ width: 300 }}
-              selectedValue={this.state.selected}
-              onValueChange={this.onValueChange.bind(this)}
-              placeholder="Selectionner un type de bon plan ?"
-              itemStyle={{ color: "#2B3B4B" }}
-
-            >
-              <Picker.Item label="Restaurant" value="key0" />
-              <Picker.Item label="Application" value="key1" />
-              <Picker.Item label="Autre" value="key2" />
-            </Picker>
+                
             </Body>
             </CardItem>
             <CardItem >
             <Body>
             <Text>Ce bon plan est-il permanent ou occasionnel ?</Text>
-            <Picker
-              note
-              mode="dropdown"
-              selectedValue={this.state.BP}
-              style={{ width: 300 }}
-              onValueChange={this.onValueChangeBP.bind(this)}
-              itemStyle={{ color: "#2B3B4B" }}
-
-            >
-              <Picker.Item label="Bon plan permanent" value="BPP" />
-              <Picker.Item label="Bon plan occasionnel" value="BPO" />
-            </Picker>
+          
               </Body>
             </CardItem>
           </Card>

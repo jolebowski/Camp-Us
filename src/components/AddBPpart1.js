@@ -105,7 +105,7 @@
                     backgroundColor='#2B3B4B'
                     style={{justifyContent:'center',alignItems:'center'}}
                     color='#FFFFFF'
-                    onPress={() => this.props.navigation.navigate('AddBP2',dataBP)}>
+                    onPress={() => this.props.navigation.navigate('AddBP2',{dataBP:this.state.dataBP})}>
                     <Text style={{color:'white'}}>Valider</Text>
             </Button>
           </Card>
