@@ -16,25 +16,41 @@
   constructor(props){
     super(props);
  
-    this.state = {
-       text: null,
-       selected: "key1",
-       BP:"BPP"
-
-    }
+   
     
  }
- onValueChange(value) {
-    this.setState({
-      selected: value
-    })}
+ 
 
-    onValueChangeBP(type) {
-      this.setState({
-        BP: type
-      })}
-
-    
+    urlImageBP(dataBP){
+      if(this.props.dataBP.type=="Restaurant"){
+        this.setState({
+          dataBP:{
+            urlImage:"https://cdn.pixabay.com/photo/2016/01/19/15/07/cocktails-1149171_960_720.jpg"
+          }
+        })
+      }
+      if(this.props.dataBP.type=="Application"){
+        this.setState({
+          dataBP:{
+            urlImage:"https://cdn.pixabay.com/photo/2014/08/05/10/27/iphone-410311_960_720.jpg"
+          }
+        })
+      }
+      if(this.props.dataBP.type=="Evenement"){
+        this.setState({
+          dataBP:{
+            urlImage:"https://cdn.pixabay.com/photo/2017/11/24/10/43/admission-2974645_960_720.jpg "
+          }
+        })
+      }
+      if(this.props.dataBP.type=="Autre"){
+        this.setState({
+          dataBP:{
+            urlImage:"https://cdn.pixabay.com/photo/2016/11/29/13/42/light-bulbs-1869945_960_720.jpg"
+          }
+        })
+      }
+    }
 
      render(){
          return(
@@ -56,7 +72,10 @@
                     </Right>
                 </Header>
                 <Content>
-                <Image source={{uri: 'https://cdn.pixabay.com/photo/2016/01/19/15/07/cocktails-1149171_960_720.jpg'}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
+                
+                
+                
+                <Image source={{uri: this.props.dataBP.urlImage}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
                 <Card style={styles.mb}>
             <CardItem  >
               <Body>

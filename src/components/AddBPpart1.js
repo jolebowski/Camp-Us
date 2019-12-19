@@ -18,20 +18,27 @@
  
     this.state = {
        text: null,
-       selected: "key1",
-       BP:"BPP"
+       dataBP:{
+         type:"Restaurant",
+         frequence:"BPP",
+         urlImage:null
+       }
 
     }
     
  }
- onValueChange(value) {
+ onTypeChange(value) {
     this.setState({
-      selected: value
+      dataBP: {
+        type:value
+      } 
     })}
 
-    onValueChangeBP(type) {
+    onFrequenceChange(type) {
       this.setState({
-        BP: type
+        dataBP: {
+          frequence: type
+        }
       })}
 
     
@@ -56,7 +63,7 @@
                     </Right>
                 </Header>
                 <Content>
-                <Image source={{uri: 'https://cdn.pixabay.com/photo/2016/01/19/15/07/cocktails-1149171_960_720.jpg'}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
+                <Image source={{uri: 'https://cdn.pixabay.com/photo/2016/12/20/22/32/holiday-shopping-1921658_960_720.jpg'}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
                 <Card style={styles.mb}>
             <CardItem  >
               <Body>
@@ -65,14 +72,15 @@
               note
               mode="dropdown"
               style={{ color: '#8CC7B1',width: 300 }}
-              selectedValue={this.state.selected}
-              onValueChange={this.onValueChange.bind(this)}
+              selectedValue={this.state.dataBP.type}
+              onValueChange={this.onTypeChange.bind(this)}
               placeholder="Selectionner un type de bon plan ?"
 
             >
-              <Picker.Item label="Restaurant" value="key0" />
-              <Picker.Item label="Application" value="key1" />
-              <Picker.Item label="Autre" value="key2" />
+              <Picker.Item label="Restaurant" value="Restaurant" />
+              <Picker.Item label="Application" value="Application" />
+              <Picker.Item label="Evenement" value="Evenement" />
+              <Picker.Item label="Autre" value="Autre" />
             </Picker>
             </Body>
             </CardItem>
@@ -82,9 +90,9 @@
             <Picker
               note
               mode="dropdown"
-              selectedValue={this.state.BP}
+              selectedValue={this.state.dataBP.frequence}
               style={{ color:'#8CC7B1', width: 300 }}
-              onValueChange={this.onValueChangeBP.bind(this)}
+              onValueChange={this.onFrequenceChange.bind(this)}
 
             >
               <Picker.Item label="Bon plan permanent" value="BPP" />
@@ -95,9 +103,10 @@
             <Button
                     title="Continuer"
                     backgroundColor='#2B3B4B'
+                    style={{justifyContent:'center',alignItems:'center'}}
                     color='#FFFFFF'
-                    onPress={() => this.props.navigation.navigate('AddBP2')}>
-                    <Text>Valider</Text>
+                    onPress={() => this.props.navigation.navigate('AddBP2',dataBP)}>
+                    <Text style={{color:'white'}}>Valider</Text>
             </Button>
           </Card>
                 </Content>
