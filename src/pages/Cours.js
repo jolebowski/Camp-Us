@@ -1,5 +1,6 @@
 import React  from 'react'
 import { Container, Content, Header, Body, Icon,Footer,Fab, Text,List,ListItem } from 'native-base';
+import { TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Menu from '../components/Menu';
 
@@ -38,7 +39,6 @@ export default class Cours extends React.Component{
                         <Text>Anglais</Text>
                     </ListItem>
                 </List>
-
             </Content>
             <Footer style={{backgroundColor:'#2B3B4B'}}>
                 <Fab

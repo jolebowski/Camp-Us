@@ -25,11 +25,11 @@ import { StyleSheet, ImageBackground,View,Image } from 'react-native';
                     <Right>
                         <Image
                         style={{ width: 91, height: 29,alignSelf:'flex-end'}}
-                        source={require('../../assets/logo.png')} />
+                        source={require('../../assets/logoipssi.png')} />
                     </Right>
                 </View>
                 <View style={styles.profileText}>
-                    <Text style = {{ color: 'white'}}>Hamra Abdelkader</Text>
+                    <Text style = {{ color: 'white'}}>Nom Prenom</Text>
                     <Text style = {{ color: 'white'}}>Adresse.Email@ecole-ipssi.net</Text>
                     <Text style = {{ color: 'white'}}>Elève</Text>
                 </View>
@@ -43,7 +43,7 @@ import { StyleSheet, ImageBackground,View,Image } from 'react-native';
                 <Left>
                     <Image
                     style={{ width: 50, height: 25,flex:1,marginLeft:10}}
-                    source={require('../../assets/logo2.png')} />
+                    source={require('../../assets/logo.png')} />
                 </Left>
             <Body>
             </Body>
