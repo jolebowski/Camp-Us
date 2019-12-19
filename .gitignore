@@ -9,3 +9,5 @@ node_modules/.cache/@babel/register/.babel.7.4.5.development.json
 src/components/.DS_Store
 src/pages/.DS_Store
 .expo/settings.json
+.expo/packager-info.json
+.expo/packager-info.json
