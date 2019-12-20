@@ -77,13 +77,13 @@ export default class CoursList extends Component {
 
 const styles = StyleSheet.create({
     scroolContainer: {
-        flex: 1
+        flex: 1,
+        paddingTop: 25
     },
     container: {
         flex: 1,
         flexDirection: 'column',
         flexWrap: "wrap",
-        padding: 2,
     },
     
 });
