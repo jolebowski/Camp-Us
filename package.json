@@ -12,7 +12,9 @@
     "native-base": "^2.13.8",
     "react": "16.12.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
+    "react-native-device-info": "^5.4.0",
     "react-native-gesture-handler": "~1.5.0",
+    "react-native-modal": "^11.5.3",
     "react-native-picker-select": "^6.3.3",
     "react-navigation": "^3.11.1",
     "validate.js": "^0.13.1"

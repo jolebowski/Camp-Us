@@ -30,7 +30,6 @@ export default class FormRegister extends Component {
             this.setState({ Error: 'Veuillez entrer votre mot de passe' })
         } else {
             data = this.state
-            console.warn(data)
             fetch('https://whispering-harbor-79661.herokuapp.com/api/register', {
                 method: 'POST',
                 headers: {

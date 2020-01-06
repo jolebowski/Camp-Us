@@ -1,18 +1,18 @@
-{/* Menu component */}
-{/* To open the drawer navigation */}
-import {Left, Icon, Button } from 'native-base';
-import React  from 'react'
+{/* Menu component */ }
+{/* To open the drawer navigation */ }
+import { Left, Icon, Button } from 'native-base';
+import React, { Component } from 'react'
 
-export default class Menu extends React.Component {
+export default class Menu extends Component {
 
     render() {
-        return ( 
+        return (
             <Left>
-                 <Button 
-                 transparent
-                 onPress = {() => this.props.navigation.openDrawer()}>
-                    <Icon name='md-menu' style={{color:'#8CC7B1'}}/>
-                </Button>   
+                <Button
+                    transparent
+                    onPress={() => this.props.navigation.openDrawer()}>
+                    <Icon name='md-menu' style={{ color: '#8CC7B1' }} />
+                </Button>
             </Left>
         )
     }

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-export default class Form extends Component {
+class Form extends Component {
     state = {
         email: '',
         password: ''
     }
+
     updateValue = (text, field) => {
         this.setState({
             [field]: text,
@@ -16,12 +18,14 @@ export default class Form extends Component {
         let collection = {};
         collection.email = email
         collection.password = password
-        if (email == '' && password == '') {
-            this.setState({ Error: 'Veuilllez remplir tous les champs' })
-        } else if (email == '') {
-            this.setState({ Error: 'Veuillez entrer votre adresse mail' })
-        } else if (password == '') {
-            this.setState({ Error: 'Veuillez entrer votre mot de passe' })
+        if (email == 'admin' && password == 'admin') {
+            this.props.navigation.navigate('HomeDrawer')
+        } else {
+            Alert.alert('Erreur', 'Veuillez entrer le bon mot de passe ou la bonne adresse mail', [{ text: 'Okay' }])
+        }
+        /*if (email == '' || password == '') {
+
+
         } else {
             fetch('https://whispering-harbor-79661.herokuapp.com/api/login', {
                 method: 'POST',
@@ -38,47 +42,61 @@ export default class Form extends Component {
                     return response.json();
                 })
                 .then(function (data) {
-                    console.log(data)
+                    console.warn(Object.keys(data))
+                    const token = ['token']
+                    const keys = Object.keys(data); //get keys from object as an array
+
+                    keys.forEach(function (key) { //loop through keys array
+                        if (key == token) {
+                            console.warn('coucou')
+                        }
+                    });
+
                 });
-        }
+        }*/
     }
     render() {
 
         return (
-            <View style={styles.container}>
-                <TextInput
-                    style={styles.inputBox}
-                    placeholder="Email"
-                    placeholderTextColor="#2B3B4B"
-                    onChangeText={(text) => this.updateValue(text, 'email')}
-                />
-                <TextInput
-                    style={styles.inputBox}
-                    placeholder="Mot de passe"
-                    placeholderTextColor="#2B3B4B"
-                    secureTextEntry={true}
-                    onChangeText={(text) => this.updateValue(text, 'password')}
-                />
-                <View>
-                    <Text
-                        style={styles.forgetPassworButton}
-                        onPress={this.props.navigate}>
-                        Mot de passe oublié ?
+            <TouchableWithoutFeedback onPress={() => {
+                Keyboard.dismiss()
+                console.log('dismissed keyboard')
+            }}>
+                <View style={styles.container}>
+                    <TextInput
+                        style={styles.inputBox}
+                        placeholder="Email"
+                        placeholderTextColor="#2B3B4B"
+                        onChangeText={(text) => this.updateValue(text, 'email')}
+                        autoCapitalize="none"
+                    />
+                    <TextInput
+                        style={styles.inputBox}
+                        placeholder="Mot de passe"
+                        placeholderTextColor="#2B3B4B"
+                        secureTextEntry={true}
+                        onChangeText={(text) => this.updateValue(text, 'password')}
+                    />
+                    <View>
+                        <Text
+                            style={styles.forgetPassworButton}
+                            onPress={this.props.navigate}>
+                            Mot de passe oublié ?
                     </Text>
+                    </View>
+                    <TouchableOpacity
+                        onPress={() => this.submit()}
+                        style={styles.button}>
+                        <Text style={styles.buttonText}
+                        >Se connecter</Text>
+                    </TouchableOpacity>
                 </View>
-                <Text style={{ color: 'red', textAlign: 'center' }}>
-                    {this.state.Error}
-                </Text>
-                <TouchableOpacity
-                    onPress={() => this.submit()}
-                    style={styles.button}>
-                    <Text style={styles.buttonText}
-                    >Se connecter</Text>
-                </TouchableOpacity>
-            </View>
+            </TouchableWithoutFeedback>
         );
     }
 }
+export default withNavigation(Form);
+
 const styles = StyleSheet.create({
     container: {
         flexGrow: 1,

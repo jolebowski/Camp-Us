@@ -10,7 +10,7 @@ export default class Login extends Component {
         goToForgetPassWord = () => {
             this.props.navigation.navigate('ForgetPassword')
         }
-       
+
         return (
             <ImageBackground
                 style={styles.imgBackground} source={require('../../assets/fond.png')}>
@@ -21,11 +21,6 @@ export default class Login extends Component {
                     <Text style={styles.signupButton} onPress={() => this.props.navigation.navigate('SignUp')}>
                         Inscrivez vous</Text>
                 </View>
-                {/*Exemple de bouton lors d'une connexion réussi -> à supprimer */}
-                <Button
-                 title= "Test Connexion"
-                    onPress={() => this.props.navigation.navigate("HomeDrawer")}
-                   />
             </ImageBackground>
         );
     }

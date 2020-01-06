@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 22567,
-  "expoServerNgrokUrl": "https://wk-u94.anonymous.ipssicom.exp.direct",
-  "packagerNgrokUrl": "https://packager.wk-u94.anonymous.ipssicom.exp.direct",
-  "ngrokPid": 22579,
+  "packagerPid": 5247,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }

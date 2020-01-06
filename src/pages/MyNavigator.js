@@ -1,5 +1,5 @@
-{/* MyNavigator component */}
-{/* To navigate between screen/stack */}
+{/* MyNavigator component */ }
+{/* To navigate between screen/stack */ }
 
 import {
   createStackNavigator,
@@ -26,7 +26,8 @@ const AuthStackNavigation = createStackNavigator(
     Login: Login,
     SignUp: SignUp,
     ForgetPassword: ForgetPassword,
-    },
+    Home: Home
+  },
   {
     initialRouteName: 'Login',
   }
@@ -52,13 +53,13 @@ const AuthStackNavigation = createStackNavigator(
 
 const MyDrawerNavigator = createDrawerNavigator({
   Home: Home,
-  Cours : Cours
+  Cours: Cours
   //BonPlans : BPStack
- }
-  ,{
-    drawerPosition : 'left',
-    initialRouteName : 'Home',
-    contentComponent : Bar,
+}
+  , {
+    drawerPosition: 'left',
+    initialRouteName: 'Home',
+    contentComponent: Bar,
     backgroundColor: '#E5E5E5',
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
@@ -67,19 +68,18 @@ const MyDrawerNavigator = createDrawerNavigator({
       activeTintColor: '#8CC7B1',
       inactiveTintColor: '#2B3B4B',
       activeBackgroundColor: 'white'
-    }   
-  
-  }
-  );
+    }
 
-  const MainNavigation = createSwitchNavigator({
-    AuthStack: AuthStackNavigation, // Utilise this.props.navigation.replace('HomeDrawer') après s'être connecté.
-    HomeDrawer: MyDrawerNavigator
-  },{
-    initialRouteName: 'AuthStack',
-  })
-  
+  }
+);
+
+const MainNavigation = createSwitchNavigator({
+  AuthStack: AuthStackNavigation, // Utilise this.props.navigation.replace('HomeDrawer') après s'être connecté.
+  HomeDrawer: MyDrawerNavigator
+}, {
+  initialRouteName: 'AuthStack',
+})
+
 
 export default createAppContainer(MainNavigation);
-    
-  
+
