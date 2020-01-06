@@ -14,3 +14,4 @@ src/pages/.DS_Store
 .expo/packager-info.json
 .DS_Store
 node_modules/*
+node_modules
