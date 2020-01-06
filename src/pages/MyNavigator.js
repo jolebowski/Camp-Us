@@ -27,7 +27,6 @@ const AuthStackNavigation = createStackNavigator(
     Login: Login,
     SignUp: SignUp,
     ForgetPassword: ForgetPassword,
-    TimeTable: TimeTable,
     },
   {
     initialRouteName: 'Login',
@@ -54,7 +53,8 @@ const AuthStackNavigation = createStackNavigator(
 
 const MyDrawerNavigator = createDrawerNavigator({
   Home: Home,
-  Cours : Cours
+  Cours : Cours,
+  TimeTable: TimeTable,
   //BonPlans : BPStack
  }
   ,{

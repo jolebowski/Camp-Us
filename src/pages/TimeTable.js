@@ -5,9 +5,13 @@ import CalendarComponent from  '../components/CalendarComponent';
 
 export default class TimeTable extends Component {
 
-    static navigationOptions = {
-        headerTitle: 'Today\'s cours',
-    };
+    static navigationOptions = ({ navigation }) => ({
+
+        title: "Emploi de temps d'aujourd'hui",
+
+        drawerIcon: () => <Ionicons name="md-book" size={24} />
+
+      });
 
     constructor(props) {
         super(props);
@@ -69,12 +73,32 @@ export default class TimeTable extends Component {
         }
         
         return (
-            <ScrollView style={styles.scroolContainer}>
-                <View style={styles.container}>
-                    <CalendarComponent />
-                    {tab}
-                </View>
-            </ScrollView>
+            <Container >
+            <Header style={{backgroundColor : '#2B3B4B'}} transparent = {true}>
+                <Menu navigation={this.props.navigation}/>
+                <Body>
+                    <Text style={{color:'#8CC7B1'}}>
+                    Mes Cours
+                    </Text>
+                </Body>
+            </Header>
+            <Content>
+                <ScrollView style={styles.scroolContainer}>
+                    <View style={styles.container}>
+                        <CalendarComponent />
+                        {tab}
+                    </View>
+                </ScrollView>
+            </Content>
+            <Footer style={{backgroundColor:'#2B3B4B'}}>
+                <Fab
+                position="bottomRight"
+                style={{ backgroundColor: '#8CC7B1' }}
+                >
+                <Icon name="add" />
+                </Fab>
+            </Footer>
+        </Container>
         );
     }
 }
