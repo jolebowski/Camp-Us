@@ -15,6 +15,7 @@ import Login from './Login';
 import Home from './Home';
 import SignUp from './SignUp';
 import ForgetPassword from './ForgetPassword';
+import TimeTable from './TimeTable';
 //import BonPlans from './BonsPlans.js';
 //import DetailBP from '../components/DetailBP';
 //import AddBP1 from '../components/AddBPpart1';
@@ -26,6 +27,7 @@ const AuthStackNavigation = createStackNavigator(
     Login: Login,
     SignUp: SignUp,
     ForgetPassword: ForgetPassword,
+    TimeTable: TimeTable,
     },
   {
     initialRouteName: 'Login',
