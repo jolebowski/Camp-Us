@@ -109,16 +109,17 @@
             </Picker>
                     <TextInput
                         //style={styles.inputBox}
-                        placeholder="Email"
+                        placeholder="Intitulé du bon plan"
                         placeholderTextColor="#2B3B4B"
                         onChangeText={(text) => this.updateValue(text, 'nom')}
                         autoCapitalize="none"
                     />
                     <TextInput
                         //style={styles.inputBox}
-                        placeholder="Mot de passe"
+                        placeholder="Description"
                         placeholderTextColor="#2B3B4B"
-                        secureTextEntry={true}
+                        multiligne={true}
+                        numberOfLines= {5}
                         onChangeText={(text) => this.updateValue(text, 'description')}
                     />
               </Body>

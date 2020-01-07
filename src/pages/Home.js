@@ -19,18 +19,10 @@ export default class Home extends React.Component {
                 </Header>
                 <Content>
                     <Text>Welcome to Camp'US</Text>
-                    <Button
-                        title="Test Deconnexion"
-                        onPress={() => this.props.navigation.navigate('AuthStack')}
-                    />
+                   
                 </Content>
                 <Footer style={{ backgroundColor: '#2B3B4B' }}>
-                    <Fab
-                        position="bottomRight"
-                        style={{ backgroundColor: '#8CC7B1' }}
-                    >
-                        <Icon name="add" />
-                    </Fab>
+                  
                 </Footer>
             </Container>
 

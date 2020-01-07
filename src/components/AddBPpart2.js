@@ -55,15 +55,14 @@
           }
         })
       }
-      return(params.urlImage)
     }
 
     componentDidMount =  async () => {
       try{
         let data = await this.props.navigation.state.params.dataBP
         //console.log(data)
-        this.urlImageBP(this.props.navigation.state.params.dataBP);
-        this.setState({dataBP: this.props.navigation.state.params.dataBP})
+        this.urlImageBP(data);
+        //this.setState({dataBP: this.props.navigation.state.params.dataBP})
 
         
       }
@@ -99,7 +98,7 @@
                 
                 
                 
-                <Image source={{uri: this.state.dataBP.urlImage}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
+                <Image source={{uri: this.urlImageBP(this.props.navigation.state.params.dataBP.urlImage)}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
                 <Card style={styles.mb}>
             <CardItem  >
               <Body>
