@@ -5,13 +5,6 @@ import Menu from '../components/Menu';
 
 export default class Home extends React.Component {
 
-    static navigationOptions = ({ navigation }) => ({
-
-        title: "Accueil",
-
-        drawerIcon: () => <Icon name="ios-home" size={24} />
-
-    });
 
     render() {
         return (
