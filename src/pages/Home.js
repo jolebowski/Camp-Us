@@ -26,7 +26,7 @@ export default class Home extends Component {
                 </Header>
                 <Content>
                     <Text>Welcome to Camp'US</Text>
-
+                    <News />
                 </Content>
                 <Footer style={{ backgroundColor: '#2B3B4B' }}>
 
