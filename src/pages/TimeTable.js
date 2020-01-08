@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Button, View, ScrollView } from 'react-native';
+import { Container, Content, Header, Body, Icon, Footer, Fab, Text } from 'native-base';
+import Menu from '../components/Menu';
 import CoursComponent from '../components/CoursComponent';
 import CalendarComponent from  '../components/CalendarComponent';
 
@@ -7,9 +9,9 @@ export default class TimeTable extends Component {
 
     static navigationOptions = ({ navigation }) => ({
 
-        title: "Emploi de temps d'aujourd'hui",
-
-        drawerIcon: () => <Ionicons name="md-book" size={24} />
+        title: "Emploi du temps",
+        
+        drawerIcon: () => <Icon name="grid" size={24} />
 
       });
 
@@ -91,12 +93,6 @@ export default class TimeTable extends Component {
                 </ScrollView>
             </Content>
             <Footer style={{backgroundColor:'#2B3B4B'}}>
-                <Fab
-                position="bottomRight"
-                style={{ backgroundColor: '#8CC7B1' }}
-                >
-                <Icon name="add" />
-                </Fab>
             </Footer>
         </Container>
         );
