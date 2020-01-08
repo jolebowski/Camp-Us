@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, {
     Component
 } from 'react';
@@ -10,17 +9,10 @@ import {
     TextInput,
     TouchableOpacity
 } from 'react-native';
-=======
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, ImageBackground, Button } from 'react-native';
-import Logo from '../components/Logo';
-import Form from '../components/Form'
->>>>>>> master
 
 export default class ForgetPassword extends Component {
     render() {
         return (
-<<<<<<< HEAD
             <ImageBackground style={styles.imgBackground}
                 source={
                     require('../../assets/fond.png')
@@ -45,21 +37,12 @@ export default class ForgetPassword extends Component {
                         <Text style={styles.buttonText}
                         >Se connecter</Text>
                     </TouchableOpacity>
-=======
-            <ImageBackground
-                style={styles.imgBackground} source={require('../../assets/fond.png')}>
-                <Logo />
-                <Form />
-                <View style={styles.signupTextCont}>
-                    <Text style={styles.signupText}>Pas encorjjjjjjjjjjjje de compte? </Text>
->>>>>>> master
                 </View>
             </ImageBackground>
         );
     }
 }
 const styles = StyleSheet.create({
-<<<<<<< HEAD
     forgetPassworButton: {
         alignSelf: 'flex-end',
         color: '#8CC7B1',
@@ -71,8 +54,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-=======
->>>>>>> master
     imgBackground: {
         flex: 1,
         alignItems: 'center',
@@ -94,7 +75,6 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 16,
     },
-<<<<<<< HEAD
     inputBox: {
         width: 300,
         width: 288,
@@ -121,6 +101,4 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         textAlign: 'center',
     },
-=======
->>>>>>> master
 });
