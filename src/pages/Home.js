@@ -20,7 +20,7 @@ export default class Home extends Component {
                     <Menu navigation={this.props.navigation} />
                     <Body>
                         <Text style={{ color: '#8CC7B1' }}>
-                            okok
+                            Page d'accueil
                         </Text>
                     </Body>
                 </Header>

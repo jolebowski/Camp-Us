@@ -13,7 +13,7 @@ export default class Cour extends Component {
                     <Text style={styles.courText}>Publié le {this.props.val.date}</Text>
                     <Text style={styles.courText}>{this.props.val.cour}</Text>
                     <TouchableOpacity onPress={this.props.deleteMethod} style={styles.courDelete}>
-                        <Text style={styles.courDeleteText}>D</Text>
+                        <Text style={styles.courDeleteText}>X</Text>
                     </TouchableOpacity>
                 </View>
             </Fragment>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#2980b9',
+        backgroundColor: 'red',
         padding: 10,
         top: 10,
         bottom: 10,
