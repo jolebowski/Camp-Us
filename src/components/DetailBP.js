@@ -1,7 +1,7 @@
 import React  from 'react'
-import { Container, Content, Header, Body, Icon,Footer,Fab, Text,List,ListItem, Right } from 'native-base';
+import { Container, Content, Header, Body, Button,Icon,Footer,Fab, Text,List,ListItem, Right } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { StyleSheet, ImageBackground,Button,View,Image,FlatList,Dimensions,TouchableOpacity,Modal } from 'react-native';
+import { StyleSheet, ImageBackground,View,Image,FlatList,Dimensions,TouchableOpacity,Modal } from 'react-native';
 //import Addbonplan from '../pages/ModalBonPlan.js';
 
 export default class DetailBP extends React.Component{
