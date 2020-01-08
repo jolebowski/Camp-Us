@@ -3,6 +3,11 @@
   "lanType": "ip",
   "dev": true,
   "minify": false,
+<<<<<<< HEAD
   "urlRandomness": "wk-u94",
   "https": false
 }
+=======
+  "urlRandomness": "he-378"
+}
+>>>>>>> 8f0d5482bc657d94ffc1c40b0288229219908fb8
