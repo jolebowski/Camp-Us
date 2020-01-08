@@ -4,7 +4,7 @@
 import { Container, Content, Header, Thumbnail, Text, Left, Right, Footer, Body } from 'native-base';
 import React, { Component } from 'react'
 import { DrawerItems } from 'react-navigation';
-import { StyleSheet, ImageBackground, View, Image } from 'react-native';
+import { StyleSheet, Button, View, Image } from 'react-native';
 
 //,backgroundColor: '#2B3B4B' COULEUR BLEU NUIT 
 export default class Bar extends Component {
@@ -22,21 +22,26 @@ export default class Bar extends Component {
                                     style={{ width: 97, height: 95, marginTop: 30, border: 1, borderColor: 'white' }}
                                     source={{ uri: 'https://cdn.pixabay.com/photo/2014/04/03/10/32/businessman-310819_960_720.png' }} />
                             </Left>
+                            <Body>
+                            </Body>
                             <Right>
-                                <Image
-                                    style={{ width: 91, height: 29, alignSelf: 'flex-end' }}
-                                    source={require('../../assets/logoipssi.png')} />
+                    
                             </Right>
                         </View>
                         <View style={styles.profileText}>
-                            <Text style={{ color: 'white' }}>Admin Admin</Text>
-                            <Text style={{ color: 'white' }}>adresse admin</Text>
+                            <Text style={{ color: 'white' }}>Nom Prenom</Text>
+                            <Text style={{ color: 'white' }}>adresse@ecole.net</Text>
                             <Text style={{ color: 'white' }}>Admin</Text>
                         </View>
                     </View>
                 </Header>
                 <Content>
                     <DrawerItems {...this.props} />
+                    <Button
+                        color='red'
+                        title="Deconnexion"
+                        onPress={() => this.props.navigation.navigate('AuthStack')}
+                    />
                 </Content>
                 <Footer
                     style={styles.footer}>
@@ -101,7 +106,6 @@ const styles = StyleSheet.create({
         flex: 1
     },
     imgBackground: {
-        alignItems: 'center',
-        justifyContent: 'center'
+        alignItems: 'center'
     },
 });

@@ -1,5 +1,6 @@
 {/* MyNavigator component */ }
 {/* To navigate between screen/stack */ }
+import React from 'react';
 
 import {
   createStackNavigator,
@@ -8,6 +9,8 @@ import {
   createAppContainer
 } from 'react-navigation';
 
+import { Icon } from 'native-base';
+
 
 import Cours from './Cours.js';
 import Bar from '../components/Bar';
@@ -15,11 +18,10 @@ import Login from './Login';
 import Home from './Home';
 import SignUp from './SignUp';
 import ForgetPassword from './ForgetPassword';
-import TimeTable from './TimeTable';
-//import BonPlans from './BonsPlans.js';
-//import DetailBP from '../components/DetailBP';
-//import AddBP1 from '../components/AddBPpart1';
-//import AddBP2 from '../components/AddBPpart2';
+import BonPlans from './BonsPlans.js';
+import DetailBP from '../components/DetailBP';
+import AddBP1 from '../components/AddBPpart1';
+import AddBP2 from '../components/AddBPpart2';
 
 
 const AuthStackNavigation = createStackNavigator(
@@ -35,8 +37,34 @@ const AuthStackNavigation = createStackNavigator(
 );
 
 
+const HomeStack = createStackNavigator({ // For header options
+  Home: Home,
 
-/*const BPStack = createStackNavigator({ // For header options
+}, {
+  initialRouteName: 'Home',
+    headerMode: 'none',
+    navigationOptions: {
+        headerVisible: false,
+        title: "Accueil",
+        drawerIcon: () => <Icon name="ios-home" size={24} />
+    }
+
+})
+
+const CoursStack = createStackNavigator({ // For header options
+  Cours: Cours,
+
+}, {
+  initialRouteName: 'Cours',
+    headerMode: 'none',
+    navigationOptions: {
+        headerVisible: false,
+        title: "Cours",
+        drawerIcon: () => <Icon name="ios-book" size={24} />
+    }
+
+})
+const BPStack = createStackNavigator({ // For header options
   ListBP: BonPlans,
   DetailBP: DetailBP,
   AddBP1: AddBP1,
@@ -47,16 +75,17 @@ const AuthStackNavigation = createStackNavigator(
     headerMode: 'none',
     navigationOptions: {
         headerVisible: false,
+        title: "Bons Plans",
+        drawerIcon: () => <Icon name="star" size={24} />
     }
 
-})*/
+})
 
 
 const MyDrawerNavigator = createDrawerNavigator({
-  Home: Home,
-  Cours: Cours,
-  TimeTable: TimeTable
-  //BonPlans : BPStack
+  Home: HomeStack,
+  Cours: CoursStack,
+  BonPlans : BPStack
 }
   , {
     drawerPosition: 'left',
