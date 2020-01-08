@@ -26,7 +26,7 @@ export default class BonsPlans extends React.Component{
 
       renderItem=({item,index}) => {
           return(
-            <TouchableOpacity style={styles.item} onPress={() => this.props.navigation.navigate('DetailBP')}>
+            <TouchableOpacity style={styles.item} onPress={() => this.props.navigation.navigate('DetailBP',{data: item.key})}>
                 <Text style={{color:'#2B3B4B',fontsize:16}}>{item.key}</Text>
             </TouchableOpacity>
           );
