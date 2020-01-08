@@ -7,6 +7,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@babel/runtime": "7.7.6",
     "axios": "^0.19.1",
     "expo": "36.0.0",
@@ -29,6 +30,18 @@
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.19.1",
+=======
+    "expo": "^35.0.0",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "babel-preset-expo": "^7.0.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.0",
+>>>>>>> master
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "7.17.0",
     "schedule": "0.5.0"

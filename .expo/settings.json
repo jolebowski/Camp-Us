@@ -3,6 +3,10 @@
   "lanType": "ip",
   "dev": true,
   "minify": false,
+<<<<<<< HEAD
   "urlRandomness": "wk-u94",
+=======
+  "urlRandomness": "he-378",
+>>>>>>> master
   "https": false
 }

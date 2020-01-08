@@ -3,7 +3,11 @@
     "name": "IpssiCom",
     "slug": "IpssiCom",
     "privacy": "public",
+<<<<<<< HEAD
     "sdkVersion": "36.0.0",
+=======
+    "sdkVersion": "35.0.0",
+>>>>>>> master
     "platforms": [
       "ios",
       "android"
