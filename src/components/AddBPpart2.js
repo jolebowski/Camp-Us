@@ -104,6 +104,7 @@
               <Body>
                 <Text>Intitulé du bon plan : {this.props.navigation.state.params.dataBP.nom}</Text>
                 <Text>Type du bon plan : {this.props.navigation.state.params.dataBP.type}</Text>
+                
                 <Text>Fréquence du bon plan :{this.props.navigation.state.params.dataBP.frequence}</Text>
                 <Text>Description : {this.props.navigation.state.params.dataBP.description}</Text>
             </Body>

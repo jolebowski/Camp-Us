@@ -12,9 +12,14 @@ export default class DetailBP extends React.Component{
                 <Header 
                 style={{backgroundColor : '#2B3B4B'}} 
                 transparent = {true}>
-                    <Button
-                    title="Go back"
-                    onPress={() => this.props.navigation.goBack()}/>
+                  <Right>
+                        <Button 
+                        transparent
+                        onPress={() => this.props.navigation.goBack()}>
+                            <Icon 
+                            name='close' /> 
+                        </Button>
+                    </Right>
                 </Header>
                 <Content>
                 </Content>

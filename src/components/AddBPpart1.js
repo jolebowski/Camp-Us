@@ -101,8 +101,8 @@
               onValueChange={(text) => this.updateValue(text, 'frequence')}
 
             >
-              <Picker.Item label="Bon plan permanent" value="BPP" />
-              <Picker.Item label="Bon plan occasionnel" value="BPO" />
+              <Picker.Item label="Bon plan permanent" value="Permanent" />
+              <Picker.Item label="Bon plan occasionnel" value="Occasionnel" />
             </Picker>
                     <TextInput
                         //style={styles.inputBox}
