@@ -22,6 +22,7 @@ import BonPlans from './BonsPlans.js';
 import DetailBP from '../components/DetailBP';
 import AddBP1 from '../components/AddBPpart1';
 import AddBP2 from '../components/AddBPpart2';
+import TimeTable from './TimeTable';
 
 
 const AuthStackNavigation = createStackNavigator(
@@ -81,10 +82,24 @@ const BPStack = createStackNavigator({ // For header options
 
 })
 
+const TimeTableStack = createStackNavigator({ // For header options
+  TimeTable: TimeTable,
+
+}, {
+  initialRouteName: 'TimeTable',
+    headerMode: 'none',
+    navigationOptions: {
+        headerVisible: false,
+        title: "Emploi du temps",
+        drawerIcon: () => <Icon name="ios-grid" size={24} />
+    }
+
+})
 
 const MyDrawerNavigator = createDrawerNavigator({
   Home: HomeStack,
   Cours: CoursStack,
+  TimeTable: TimeTableStack,
   BonPlans : BPStack
 }
   , {

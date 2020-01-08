@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Content, Header, Body, Icon, Footer, Fab, Text, } from 'native-base';
 import { Button, StyleSheet, View } from 'react-native';
-import { WebView } from 'react-native-webview'
 
 import Menu from '../components/Menu';
 import News from '../components/News'

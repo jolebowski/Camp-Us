@@ -48,7 +48,6 @@
       }
     }
      render(){
-       console.log(this.state)
        let dataBP = this.state;
          return(
             <Container 

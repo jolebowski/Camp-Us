@@ -7,14 +7,6 @@ import CalendarComponent from  '../components/CalendarComponent';
 
 export default class TimeTable extends Component {
 
-    static navigationOptions = ({ navigation }) => ({
-
-        title: "Emploi du temps",
-        
-        drawerIcon: () => <Icon name="grid" size={24} />
-
-      });
-
     constructor(props) {
         super(props);
     }
@@ -80,7 +72,7 @@ export default class TimeTable extends Component {
                 <Menu navigation={this.props.navigation}/>
                 <Body>
                     <Text style={{color:'#8CC7B1'}}>
-                    Mes Cours
+                    Emploi du temps
                     </Text>
                 </Body>
             </Header>

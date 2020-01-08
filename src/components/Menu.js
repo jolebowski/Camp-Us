@@ -6,7 +6,6 @@ import React, { Component } from 'react'
 export default class Menu extends Component {
 
     render() {
-        console.warn(this.props.navigation, 'okok')
         return (
             <Left>
                 <Button

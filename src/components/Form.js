@@ -32,7 +32,6 @@ class Form extends Component {
         return (
             <TouchableWithoutFeedback onPress={() => {
                 Keyboard.dismiss()
-                console.log('dismissed keyboard')
             }}>
                 <View style={styles.container}>
                     <TextInput
