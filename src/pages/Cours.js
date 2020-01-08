@@ -14,13 +14,6 @@ export default class Cours extends Component {
         this.setState({ modalVisible: visible });
     }
 
-    static navigationOptions = ({ navigation }) => ({
-
-        title: "Cours",
-
-        drawerIcon: () => <Ionicons name="md-book" size={24} />
-
-    });
     addCour = () => {
         const { coursText, coursArr } = this.state
         if (coursText) {

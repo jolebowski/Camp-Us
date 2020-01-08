@@ -10,13 +10,6 @@ import News from '../components/News'
 export default class Home extends Component {
 
 
-    static navigationOptions = ({ navigation }) => ({
-
-        title: "Accueil",
-
-        drawerIcon: () => <Icon name="ios-home" size={24} />
-
-    });
 
     render() {
 
@@ -33,12 +26,11 @@ export default class Home extends Component {
                 </Header>
                 <Content>
                     <Text>Welcome to Camp'US</Text>
-                    <Button
-                        title="Test Deconnexion"
-                        onPress={() => this.props.navigation.navigate('AuthStack')}
-                    />
-                    <News />
+
                 </Content>
+                <Footer style={{ backgroundColor: '#2B3B4B' }}>
+
+                </Footer>
             </Container>
 
         )
