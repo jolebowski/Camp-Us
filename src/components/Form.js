@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { withNavigation } from 'react-navigation';
+import axios from 'axios'
 
 class Form extends Component {
     state = {
@@ -15,45 +16,16 @@ class Form extends Component {
     }
     submit = () => {
         const { email, password } = this.state
-        let collection = {};
-        collection.email = email
-        collection.password = password
-        if (email == 'admin' && password == 'admin') {
-            this.props.navigation.navigate('HomeDrawer')
-        } else {
+        if (email === '' || password === '') {
             Alert.alert('Erreur', 'Veuillez entrer le bon mot de passe ou la bonne adresse mail', [{ text: 'Okay' }])
-        }
-        /*if (email == '' || password == '') {
-
-
         } else {
-            fetch('https://whispering-harbor-79661.herokuapp.com/api/login', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: this.state.email,
-                    password: this.state.password
-                })
-            })
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (data) {
-                    console.warn(Object.keys(data))
-                    const token = ['token']
-                    const keys = Object.keys(data); //get keys from object as an array
 
-                    keys.forEach(function (key) { //loop through keys array
-                        if (key == token) {
-                            console.warn('coucou')
-                        }
-                    });
-
-                });
-        }*/
+            axios.post('https://whispering-harbor-79661.herokuapp.com/api/login', this.state)
+                .then(res => this.props.navigation.navigate('HomeDrawer', {
+                    email: email,
+                }))
+                .catch(() => Alert.alert('Erreur', "vous n'êtes pas encore inscrit", [{ text: 'Okay' }]))
+        }
     }
     render() {
 
