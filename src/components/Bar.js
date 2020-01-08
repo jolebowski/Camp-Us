@@ -25,14 +25,12 @@ export default class Bar extends Component {
                             <Body>
                             </Body>
                             <Right>
-                                <Image
-                                    style={{ width: 91, height: 29, alignSelf: 'flex-end' }}
-                                    source={require('../../assets/logoipssi.png')} />
+                    
                             </Right>
                         </View>
                         <View style={styles.profileText}>
-                            <Text style={{ color: 'white' }}>Admin Admin</Text>
-                            <Text style={{ color: 'white' }}>adresse admin</Text>
+                            <Text style={{ color: 'white' }}>Nom Prenom</Text>
+                            <Text style={{ color: 'white' }}>adresse@ecole.net</Text>
                             <Text style={{ color: 'white' }}>Admin</Text>
                         </View>
                     </View>

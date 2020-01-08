@@ -21,10 +21,10 @@
       //console.log(this.props);
 
     } 
-    this.urlImageBP =  this.urlImageBP.bind(this)
+   // this.urlImageBP =  this.urlImageBP.bind(this)
 
  }
-
+/*
   urlImageBP = (params) => {
     console.log("params", params.type)
       if(params.type==="Restaurant"){
@@ -56,12 +56,12 @@
         })
       }
     }
-
+*/
     componentDidMount =  async () => {
       try{
         let data = await this.props.navigation.state.params.dataBP
         //console.log(data)
-        this.urlImageBP(data);
+        //this.urlImageBP(data);
         //this.setState({dataBP: this.props.navigation.state.params.dataBP})
 
         
@@ -98,18 +98,15 @@
                 
                 
                 
-                <Image source={{uri: this.urlImageBP(this.props.navigation.state.params.dataBP.urlImage)}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
+                <Image source={{uri: "https://cdn.pixabay.com/photo/2016/12/20/22/32/holiday-shopping-1921658_960_720.jpg"}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
                 <Card style={styles.mb}>
             <CardItem  >
               <Body>
-                <Text>{this.props.navigation.state.params.dataBP.type}</Text>
+                <Text>Intitulé du bon plan : {this.props.navigation.state.params.dataBP.nom}</Text>
+                <Text>Type du bon plan : {this.props.navigation.state.params.dataBP.type}</Text>
+                <Text>Fréquence du bon plan :{this.props.navigation.state.params.dataBP.frequence}</Text>
+                <Text>Description : {this.props.navigation.state.params.dataBP.description}</Text>
             </Body>
-            </CardItem>
-            <CardItem >
-            <Body>
-            <Text>{this.props.navigation.state.params.dataBP.frequence}</Text>
-          
-              </Body>
             </CardItem>
           </Card>
           <Button

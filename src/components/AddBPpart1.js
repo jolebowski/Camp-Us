@@ -4,7 +4,7 @@
  import React from 'react';
  //import react in our code.
  
- import { Modal, View, Text,StyleSheet,TouchableOpacity,TextInput,ImageBackground,Image } from 'react-native';
+ import { Modal, View, Text,StyleSheet,TouchableOpacity,TextInput,Alert,Image } from 'react-native';
  //import all the components we are going to use.
  
  //import Formbppermanant from './FormBPP.js';
@@ -26,20 +26,6 @@
     }
     
  }
- onTypeChange(value) {
-    this.setState({
-      dataBP: {
-        type:value
-        
-      } 
-    })}
-
-    onFrequenceChange(type) {
-      this.setState({
-        dataBP: {
-          frequence: type
-        }
-      })}
 
       updateValue = (text, field) => {
         this.setState({
@@ -48,8 +34,19 @@
         })
     }
 
-    
-
+    submit = (dataBP) => {
+      const { nom, type, frequence, description } = this.state
+      let bonplan = {};
+      bonplan.nom = nom
+      bonplan.type = type
+      bonplan.frequence = frequence
+      bonplan.description = description
+      if (nom != null && description != null) {
+        this.props.navigation.navigate('AddBP2',{dataBP: dataBP}) }   
+       else {
+          Alert.alert('Erreur', 'Veuillez renseigner des informations sur votre bon plan', [{ text: 'Continuer' }])
+      }
+    }
      render(){
        console.log(this.state)
        let dataBP = this.state;
@@ -72,7 +69,7 @@
                     </Right>
                 </Header>
                 <Content>
-                <Image source={{uri: 'https://cdn.pixabay.com/photo/2016/12/20/22/32/holiday-shopping-1921658_960_720.jpg'}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
+                <Image source={{uri: "https://cdn.pixabay.com/photo/2016/01/19/15/07/cocktails-1149171_960_720.jpg"}} style={{height: 150, flex: 1,justifyContent:'center'}}/>
                 <Card style={styles.mb}>
             <CardItem  >
               <Body>
@@ -130,7 +127,7 @@
                     backgroundColor='#2B3B4B'
                     style={{justifyContent:'center',alignItems:'center'}}
                     color='#FFFFFF'
-                    onPress={() => this.props.navigation.navigate('AddBP2',{dataBP: dataBP})}>
+                    onPress={() => this.submit(dataBP)}>
                     <Text style={{color:'white'}}>Valider</Text>
             </Button>
           </Card>
