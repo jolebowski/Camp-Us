@@ -10,7 +10,6 @@ export default class Cour extends Component {
             <Fragment>
 
                 <View key={this.props.keyVal} style={styles.cour} >
-                    <Text style={styles.courText}>Publié le {this.props.val.date}</Text>
                     <Text style={styles.courText}>{this.props.val.cour}</Text>
                     <TouchableOpacity onPress={this.props.deleteMethod} style={styles.courDelete}>
                         <Text style={styles.courDeleteText}>X</Text>

@@ -25,13 +25,12 @@ export default class Bar extends Component {
                             <Body>
                             </Body>
                             <Right>
-                    
+
                             </Right>
                         </View>
                         <View style={styles.profileText}>
-                            <Text style={{ color: 'white' }}>Nom Prenom</Text>
-                            <Text style={{ color: 'white' }}>adresse@ecole.net</Text>
-                            <Text style={{ color: 'white' }}>Admin</Text>
+                            <Text style={{ color: 'white' }}>Admin5</Text>
+                            <Text style={{ color: 'white' }}>admin5@ecole-ipssi.net</Text>
                         </View>
                     </View>
                 </Header>

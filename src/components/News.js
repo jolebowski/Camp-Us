@@ -18,10 +18,6 @@ export default function News() {
                     return (
                         <View key={item.key}>
                             <Text style={styles.item}>{item.name}</Text>
-                            <Image
-                                style={styles.img}
-                                source={{ uri: item.img }}
-                            />
                             <Text style={{ color: 'blue' }}
                                 onPress={() => Linking.openURL(item.link)}>
                                 {item.link && lien}
@@ -47,7 +43,4 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: '#2B3B4B',
     },
-    img: {
-        width: 50, height: 50
-    }
 })
