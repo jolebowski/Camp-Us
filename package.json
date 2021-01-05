@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@babel/runtime": "7.7.6",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "expo": "36.0.0",
     "hoist-non-react-statics": "*",
     "moment": "^2.24.0",
